@@ -1,0 +1,282 @@
+@import "./__mixin.scss";
+.home {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logo {
+    filter: drop-shadow(rgba(0, 0, 0, 0.705) 10px 15px 25px);
+    width: 60%;
+    margin-top: -50px;
+    @include breakPointX(850px) {
+      margin-top: -20px;
+    }
+    @include breakPointX(700px) {
+      width: 80%;
+    }
+    @include breakPointY(650px) {
+      height: 300px;
+    }
+  }
+  .form-wrapper {
+    width: 880px;
+    padding: 15px;
+    background: #444;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+    @include breakPointX(1200px) {
+      width: 780px;
+    }
+    @include breakPointX(1000px) {
+      width: 680px;
+    }
+    @include breakPointX(760px) {
+      width: 580px;
+    }
+    @include breakPointX(630px) {
+      width: 480px;
+    }
+    @include breakPointX(550px) {
+      width: 380px;
+    }
+    @include breakPointX(425px) {
+      width: 280px;
+    }
+    @include breakPointX(375px) {
+      width: 230px;
+    }
+    input {
+      width: 725px;
+      height: 20px;
+      padding: 10px 5px;
+      float: left;
+      border: 0;
+      background: #eee;
+      border-radius: 3px 0 0 3px;
+      @include breakPointX(1200px) {
+        width: 625px;
+      }
+      @include breakPointX(1000px) {
+        width: 525px;
+      }
+      @include breakPointX(760px) {
+        width: 475px;
+      }
+      @include breakPointX(630px) {
+        width: 375px;
+      }
+      @include breakPointX(550px) {
+        width: 275px;
+      }
+      @include breakPointX(425px) {
+        width: 225px;
+        height: 10px;
+      }
+      @include breakPointX(375px) {
+        width: 175px;
+      }
+      &:focus {
+        outline: 0;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.8) inset;
+      }
+      &:placeholder-shown {
+        color: #000;
+        padding-right: 10px;
+        font-weight: normal;
+        font-size: 15px;
+        font-style: italic;
+        font-family: yekan;
+      }
+    }
+    button {
+      overflow: visible;
+      position: relative;
+      float: right;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      height: 40px;
+      width: 140px;
+      font-family: Vazir-Black-WOL;
+      font-size: 17px;
+      color: rgba(26, 25, 25, 0.932);
+      text-transform: uppercase;
+      background-image: linear-gradient(to right, #c21500 0%, #ffc500 51%, #c21500 100%);
+      background-size: 200% auto;
+      border-radius: 0 3px 3px 0;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+      transition: 0.5s;
+      @include breakPointX(760px) {
+        width: 90px;
+        font-size: 14px;
+      }
+      @include breakPointX(425px) {
+        width: 40px;
+        height: 30px;
+      }
+      &:hover {
+        background-position: right center;
+        &:before {
+          border-right-color: #ffc500;
+        }
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        border-width: 8px 8px 8px 0;
+        border-style: solid solid solid none;
+        border-color: transparent #c21500 transparent;
+        top: 12px;
+        left: -6px;
+        transition: 0.5s;
+        @include breakPointX(425px) {
+          top: 7px;
+        }
+      }
+      .button-icon {
+        display: none;
+        @include breakPointX(425px) {
+          display: block;
+        }
+      }
+      .button-text {
+        @include breakPointX(425px) {
+          display: none;
+        }
+      }
+    }
+  }
+  .popularity-title {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 45px;
+    font-weight: 900;
+    font-family: _PDMS_Saleem_QuranFont;
+    @include breakPointX(1000px) {
+      font-size: 35px;
+    }
+    @include breakPointX(760px) {
+      font-size: 29px;
+    }
+    @include breakPointX(460px) {
+      font-size: 25px;
+    }
+    @include breakPointX(375px) {
+      font-size: 20px;
+    }
+  }
+  .popularity-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 98%;
+    justify-content: space-around;
+    font-family: Vazir-Light-WOL;
+    .popularity-div {
+      width: 270px;
+      height: 90%;
+      background-image: linear-gradient(to right, #f7971e 0%, #ffd200 51%, #f7971e 100%);
+      background-size: 200% auto;
+      box-shadow: rgba(146, 116, 116, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      border-radius: 20px;
+      border: 10px double rgb(95, 27, 27);
+      transition: 0.5s;
+      @include breakPointX(1180px) {
+        width: 220px;
+      }
+      @include breakPointX(990px) {
+        width: 170px;
+      }
+      @include breakPointX(780px) {
+        width: 270px;
+        height: 100px;
+      }
+      @include breakPointX(650px) {
+        width: 200px;
+        height: 90px;
+      }
+      @include breakPointX(470px) {
+        width: 270px;
+        height: 50px;
+        border-width: 5px;
+      }
+      @include breakPointY(570px) {
+        height: 60px;
+      }
+      &:hover {
+        background-position: right center;
+      }
+      .popularity-name {
+        font-size: 20px;
+        margin-bottom: 0;
+        span {
+          font-weight: 900;
+        }
+        @include breakPointX(990px) {
+          font-size: 17px;
+        }
+        @include breakPointX(780px) {
+          font-size: 20px;
+        }
+        @include breakPointX(650px) {
+          font-size: 16px;
+        }
+        @include breakPointX(470px) {
+          display: inline-block;
+          margin-top: 0;
+        }
+        @include breakPointY(570px) {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+      .popularity-number {
+        display: inline-block;
+        font-size: 17px;
+        span {
+          font-weight: 900;
+        }
+        @include breakPointX(990px) {
+          font-size: 14px;
+        }
+        @include breakPointX(780px) {
+          font-size: 17px;
+        }
+        @include breakPointX(650px) {
+          font-size: 13px;
+        }
+        @include breakPointX(470px) {
+          margin-right: 10px;
+        }
+        @include breakPointY(570px) {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+      .popularity-part {
+        display: inline-block;
+        font-size: 17px;
+        margin-right: 10px;
+        span {
+          font-weight: 900;
+        }
+        @include breakPointX(990px) {
+          font-size: 14px;
+        }
+        @include breakPointX(780px) {
+          font-size: 17px;
+        }
+        @include breakPointX(650px) {
+          font-size: 13px;
+        }
+        @include breakPointY(570px) {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

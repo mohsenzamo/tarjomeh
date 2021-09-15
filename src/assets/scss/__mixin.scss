@@ -1,0 +1,10 @@
+@mixin breakPointX($size) {
+    @media only screen and (max-width: $size) {
+        @content;
+    }
+}
+@mixin breakPointY($size) {
+    @media only screen and (max-height: $size) {
+        @content;
+    }
+}

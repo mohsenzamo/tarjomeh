@@ -1,0 +1,26 @@
+@import "./__app.scss";
+@font-face {
+    font-family: me-quran;
+    src: url("../fonts/me-quran/me-quran.ttf");
+}
+@font-face {
+    font-family: neirizi;
+    src: url("../fonts/neirizi/neirizi.ttf");
+}
+@font-face {
+    font-family: Vazir-Black-WOL;
+    src: url("../fonts/vazir/Vazir-Black-WOL.ttf");
+}
+@font-face {
+    font-family: Vazir-Light-WOL;
+    src: url("../fonts/vazir/Vazir-Light-WOL.ttf");
+}
+@font-face {
+    font-family: yekan;
+    src: url("../fonts/yekan/Yekan.ttf");
+}
+html,
+body {
+    margin: 0;
+    direction: rtl;
+}

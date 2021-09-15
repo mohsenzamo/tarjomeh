@@ -1,0 +1,231 @@
+@import "./__mixin.scss";
+#app {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    .app {
+        height: 100%;
+        width: 100%;
+        .overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.966);
+            overflow-x: hidden;
+            transition: 0.5s;
+            will-change: transform;
+            .fa {
+                color: #fff;
+                font-size: 50px;
+            }
+            .closebtn {
+                position: absolute;
+                top: 20px;
+                right: 45px;
+                font-size: 60px;
+                color: #fff;
+                margin-top: 50px;
+            }
+            .overlay-content {
+                position: relative;
+                top: 25%;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+                .setting-box {
+                    border: 5px solid #fff;
+                    .dark-toggle {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        label {
+                            position: relative;
+                            display: block;
+                            width: 180px;
+                            height: 100px;
+                            border-radius: 100px;
+                            background-color: #000839;
+                            overflow: hidden;
+                            cursor: pointer;
+                            &:before,
+                            &:after {
+                                display: block;
+                                position: absolute;
+                                content: "";
+                                width: 72px;
+                                height: 72px;
+                                border-radius: 50%;
+                                top: 14px;
+                                left: 14px;
+                                transition: 0.5s ease;
+                            }
+                            &:before {
+                                background-color: #ffa41b;
+                            }
+
+                            &:after {
+                                background-color: #000839;
+                                left: -58px;
+                                transform: scale(0.00001);
+                            }
+                        }
+
+                        input[type="checkbox"] {
+                            display: none;
+                            &:checked + label {
+                                &:before {
+                                    background-color: #fff;
+                                    transform: translateX(80px);
+                                }
+
+                                &:after {
+                                    transform: translateX(120px) scale(1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .setting-icon {
+            z-index: 1;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: rgb(82, 77, 77);
+            transition: all 0.5s;
+            .setting-icon-arrow {
+                display: block;
+                transform: rotate(90deg);
+            }
+            .setting-icon-text {
+                display: none;
+                font-size: 15px;
+                color: #fff;
+                font-family: Vazir-Light-WOL;
+            }
+            &:hover {
+                width: 80px;
+                .setting-icon-arrow {
+                    display: none;
+                }
+                .setting-icon-text {
+                    display: block;
+                }
+            }
+        }
+        #nav {
+            position: fixed;
+            left: 48%;
+            @include breakPointX(1440px) {
+                bottom: 2%;
+            }
+            @include breakPointX(1300px) {
+                bottom: 4%;
+            }
+            @include breakPointX(580px) {
+                left: 45%;
+            }
+            a {
+                display: block;
+                .link-button {
+                    font-size: 20px;
+                    width: 130px;
+                    height: 40px;
+                    color: #fff;
+                    border-radius: 5px;
+                    font-family: Vazir-Light-WOL;
+                    font-weight: 500;
+                    background: transparent;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    display: inline-block;
+                    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+                        4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+                    outline: none;
+                    border: none;
+                    transition: all 0.3s ease;
+                    overflow: hidden;
+                    &:after {
+                        position: absolute;
+                        content: " ";
+                        z-index: -1;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #1fd1f9;
+                        background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+                        transition: all 0.3s ease;
+                    }
+                    &:hover {
+                        background: transparent;
+                        color: #fff;
+                        &:after {
+                            -webkit-transform: scale(2) rotate(180deg);
+                            transform: scale(2) rotate(180deg);
+                            box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5), -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+                                inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
+                                inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+                        }
+                    }
+                }
+                &.router-link-exact-active {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.dark-back {
+    background-color: #414141 !important;
+    background-image: none !important;
+    .popularity-title {
+        color: #ccc !important;
+    }
+    .link-button {
+        color: #000 !important;
+        &:after {
+            background-color: #55608f !important;
+            background-image: none !important;
+        }
+    }
+    .box-table {
+        td,
+        th {
+            color: #000 !important;
+        }
+    }
+    .form-wrapper {
+        button {
+            color: #ccc !important;
+            background-image: linear-gradient(to right, #16222a 0%, #3a6073 51%, #16222a 100%) !important;
+            &:hover {
+                &:before {
+                    border-right-color: #3a6073 !important;
+                }
+            }
+            &:before {
+                border-color: transparent #16222a transparent !important;
+            }
+        }
+    }
+    .popularity-div {
+        color: #ccc !important;
+        background-image: linear-gradient(to right, #16222a 0%, #3a6073 51%, #16222a 100%) !important;
+        border: 10px double rgba(0, 0, 0, 0.678) !important;
+    }
+}

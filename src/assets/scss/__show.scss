@@ -1,0 +1,103 @@
+@import "./_mixin";
+$base: #263238;
+$lite: #fff;
+$brand: #ff3d00;
+$size: 68px;
+.soureh-box {
+    display: grid;
+    justify-items: center;
+    .mohsen1Box {
+        text-align: center;
+        .mohsen1 {
+            &:nth-child(1) {
+                width: fill-available;
+                border: none;
+            }
+            font-size: 20px;
+            direction: rtl;
+            width: fit-content;
+            display: inline-grid;
+            border: 1px solid black;
+            &:nth-last-child(1) {
+                margin-bottom: 100px;
+            }
+            .mohsenfarsi {
+                margin-left: 15px;
+                margin-right: 15px;
+                color: red;
+            }
+        }
+    }
+    .mohsen2Box {
+        text-align: center;
+        .mohsen2 {
+            font-size: 20px;
+            direction: rtl;
+            border: 1px solid black;
+            width: fit-content;
+            display: inline-grid;
+            &:nth-last-child(1) {
+                margin-bottom: 100px;
+            }
+            .mohsenfarsi {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+    }
+}
+.loader-div {
+    display: grid;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    .loader-div-span {
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        border: 3px solid;
+        border-color: $lite $lite transparent transparent;
+        animation: rotation 1s linear infinite;
+        &:after,
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border: 3px solid;
+            border-color: transparent transparent $brand $brand;
+            width: $size - 8px;
+            height: $size - 8px;
+            border-radius: 50%;
+            animation: rotationBack 0.5s linear infinite;
+            transform-origin: center center;
+        }
+        &:before {
+            width: $size - 16px;
+            height: $size - 16px;
+            border-color: $lite $lite transparent transparent;
+            animation: rotation 1.5s linear infinite;
+        }
+    }
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
