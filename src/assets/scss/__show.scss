@@ -13,6 +13,10 @@ $size: 68px;
                 width: fill-available;
                 border: none;
             }
+            a{
+                background-color: red;
+            }
+            font-family: IRANSans;
             font-size: 20px;
             direction: rtl;
             width: fit-content;
@@ -24,7 +28,8 @@ $size: 68px;
             .mohsenfarsi {
                 margin-left: 15px;
                 margin-right: 15px;
-                color: red;
+                color: orange;
+                
             }
         }
     }

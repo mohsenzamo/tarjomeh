@@ -51,16 +51,14 @@
 
 <script lang="ts">
 import { defineComponent, ref, watchEffect } from "vue";
-
+import { useStore } from "./store/index";
 
 export default defineComponent({
   name: "App",
   setup() {
-    
-
     let darkJson = localStorage.getItem("darkMode") || "false";
     const darkValue = ref(JSON.parse(darkJson));
-    
+
     const gradientElement = ref<HTMLDivElement>();
     function liveGradient() {
       const colors = new Array(
@@ -128,10 +126,12 @@ export default defineComponent({
       }
     });
 
+    const store = useStore();
     let faJson = localStorage.getItem("faValue") || '"ansarian"';
     let faValue = ref(JSON.parse(faJson));
     watchEffect(() => {
       localStorage.setItem("faValue", JSON.stringify(faValue.value));
+      store.fa = faValue.value;
     });
 
     let overlayValue = ref("translateX(-100%)");

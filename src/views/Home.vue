@@ -1071,10 +1071,12 @@ export default defineComponent({
       if (this.input_value == "") {
         Swal.fire({
           icon: "warning",
+          iconColor:"red",
           title: "خطا!",
           text: "لطفا اسم سوره را وارد کنید",
           showCloseButton: true,
           showConfirmButton: false,
+          background:"#999",
         });
       } else {
         for (let i = 0; i < 114; i++) {
