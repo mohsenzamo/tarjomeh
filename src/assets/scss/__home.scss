@@ -177,7 +177,7 @@
     font-family: Vazir-Light-WOL;
     .popularity-div {
       width: 270px;
-      height: 90%;
+      height: 80%;
       background-image: linear-gradient(to right, #f7971e 0%, #ffd200 51%, #f7971e 100%);
       background-size: 200% auto;
       box-shadow: rgba(146, 116, 116, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -212,6 +212,7 @@
       .popularity-name {
         font-size: 20px;
         margin-bottom: 0;
+        margin-top: 10px;
         span {
           font-weight: 900;
         }
@@ -236,6 +237,7 @@
       .popularity-number {
         display: inline-block;
         font-size: 17px;
+        font-family: IRANSans;
         span {
           font-weight: 900;
         }
@@ -250,27 +252,6 @@
         }
         @include breakPointX(470px) {
           margin-right: 10px;
-        }
-        @include breakPointY(570px) {
-          margin-top: 0;
-          margin-bottom: 0;
-        }
-      }
-      .popularity-part {
-        display: inline-block;
-        font-size: 17px;
-        margin-right: 10px;
-        span {
-          font-weight: 900;
-        }
-        @include breakPointX(990px) {
-          font-size: 14px;
-        }
-        @include breakPointX(780px) {
-          font-size: 17px;
-        }
-        @include breakPointX(650px) {
-          font-size: 13px;
         }
         @include breakPointY(570px) {
           margin-top: 0;

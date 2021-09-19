@@ -11,83 +11,50 @@
         :key="index"
         class="mohsen1"
       >
-        <a
-          v-if="soureh.id == 1"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${
-            soureh.id
-          }00${index + 1}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id > 1 && soureh.id < 10 && index < 10"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${soureh.id}00${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id > 1 && soureh.id < 10 && index >= 10 && index < 100"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${soureh.id}0${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id > 1 && soureh.id < 10 && index >= 100"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${soureh.id}${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
+        <div class="container">
+          <a @click.prevent="callAudio(soureh.id, index)" class="playBut">
+            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+              x="0px"
+              y="0px"
+              width="213.7px"
+              height="213.7px"
+              viewBox="0 0 213.7 213.7"
+              enable-background="new 0 0 213.7 213.7"
+              xml:space="preserve"
+            >
+              <polygon
+                class="triangle"
+                id="XMLID_18_"
+                fill="none"
+                stroke-width="7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                points="
+	73.5,62.5 148.5,105.8 73.5,149.1 "
+              />
 
-        <a
-          v-if="soureh.id < 100 && soureh.id >= 10 && index < 10"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/0${soureh.id}00${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="
-            soureh.id < 100 && soureh.id >= 10 && index >= 10 && index < 100
-          "
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/0${soureh.id}0${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id < 100 && soureh.id >= 10 && index >= 100"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/0${soureh.id}${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-
-        <a
-          v-if="soureh.id >= 100 && index < 10"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/${soureh.id}00${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id >= 100 && index >= 10 && index < 100"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/${soureh.id}0${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id >= 100 && index >= 100"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/${soureh.id}${index}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <p :ref="pAr">
+              <circle
+                class="circle"
+                id="XMLID_17_"
+                fill="none"
+                stroke-width="7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                cx="106.8"
+                cy="106.8"
+                r="103.3"
+              />
+            </svg>
+          </a>
+        </div>
+        <p>
           {{ item }}
           <span v-if="index > 0">(({{ index }}))</span>
         </p>
@@ -105,55 +72,56 @@
         </p>
       </div>
     </div>
+
     <div v-else class="mohsen2Box">
       <div
         v-for="(item, index) in soureh.arabic_text"
         :key="index"
         class="mohsen2"
       >
-        <a
-          v-if="soureh.id > 1 && soureh.id < 10 && index < 9"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${
-            soureh.id
-          }00${index + 1}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id > 1 && soureh.id < 10 && index == 9"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${
-            soureh.id
-          }0${index+1}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id > 1 && soureh.id < 10 && index >= 10 && index < 99"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${
-            soureh.id
-          }0${index + 1}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id > 1 && soureh.id < 10 && index == 99"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${
-            soureh.id
-          }${index+1}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
-        <a
-          v-if="soureh.id > 1 && soureh.id < 10 && index >= 100"
-          @click.prevent="callaudio(index)"
-          :href="`http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/00${soureh.id}${index+1}.mp3`"
-          :ref="buttonhref"
-          ><button>play</button></a
-        >
+        <div class="container">
+          <a @click.prevent="callAudio(soureh.id, index)" class="playBut">
+            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+              x="0px"
+              y="0px"
+              width="213.7px"
+              height="213.7px"
+              viewBox="0 0 213.7 213.7"
+              enable-background="new 0 0 213.7 213.7"
+              xml:space="preserve"
+            >
+              <polygon
+                class="triangle"
+                id="XMLID_18_"
+                fill="none"
+                stroke-width="7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                points="
+	73.5,62.5 148.5,105.8 73.5,149.1 "
+              />
+
+              <circle
+                class="circle"
+                id="XMLID_17_"
+                fill="none"
+                stroke-width="7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                cx="106.8"
+                cy="106.8"
+                r="103.3"
+              />
+            </svg>
+          </a>
+        </div>
         <p>
           {{ item }}
           <span>(({{ index + 1 }}))</span>
@@ -172,26 +140,30 @@
         </p>
       </div>
     </div>
+
+    <div class="audio-box">
+      <div>
+        <audio
+          ref="audioElement1"
+          controls
+          :src="audioSrc"
+          @error="error"
+          @ended="callAudioEnded(soureh.id)"
+        ></audio>
+        <button @click="play">play</button>
+      </div>
+      <img
+        src="https://i.picsum.photos/id/15/200/300.jpg?hmac=lozQletmrLG9PGBV1hTM1PnmvHxKEU0lAZWu8F2oL30"
+        alt=""
+      />
+    </div>
   </div>
   <div v-else class="loader-div">
     <span class="loader-div-span"></span>
   </div>
-  <audio ref="audioElement1" controls style="background-color: red" onerror="alert('لطفا اتصال خود به اینترنت را بررسی کنید')"></audio>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-
-  <div></div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, onMounted, ref, nextTick } from "vue";
 import { useStore } from "../store/index";
 import Swal from "sweetalert2";
 
@@ -199,65 +171,88 @@ export default defineComponent({
   name: "Show",
   props: ["id"],
   components: {},
-  setup() {
-    function mohsen(){
-alert('1wq');
-    };
-    const audioElement1 = ref<HTMLAudioElement>();
-
-    let itemRefs: any = ref([]);
-    const buttonhref = (el: any) => {
-      if (el) {
-        itemRefs.value.push(el);
-      }
-    };
-    let pRefs: any = ref([]);
-    const pAr = (el: any) => {
-      if (el) {
-        pRefs.value.push(el);
-      }
-    };
-    function callaudio(aye: number) {
-      let counter = aye;
-      audioElement1.value!.src = itemRefs.value[aye].href;
-      audioElement1.value!.play();
-      // pRefs.value[aye]!.addClass("blueText")
-      audioElement1.value!.addEventListener("ended", function () {
-        counter++;
-        if (counter <= itemRefs.value.length) {
-          audioElement1.value!.src = itemRefs.value[counter].href;
-          audioElement1.value!.play();
-        }
+  setup(props) {
+    function error() {
+      Swal.fire({
+        icon: "warning",
+        title: "خطا!",
+        text: "اتصال خود را به اینترنت بررسی کنید",
+        showCloseButton: true,
+        showConfirmButton: false,
+        background: "#999",
       });
     }
+    const audioElement1 = ref<HTMLAudioElement>();
 
+    let audioSrc = ref<string>(
+      
+    );
+    let counter = ref<number>(0);
+    function play() {
+      audioElement1.value!.play();
+    }
+    function callAudio(id: number, aye: number) {
+      if (id == 1 || id == 9) {
+        aye++;
+      }
+      let z = id.toString().padStart(3, "0");
+      let r = aye.toString().padStart(3, "0");
+      audioSrc.value = `http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/${z}${r}.mp3`;
+      nextTick(() => {
+        audioElement1.value!.play();
+      });
+      counter.value = aye;
+    }
+    function callAudioEnded(id: number) {
+      if (id == 1) {
+        let z = id.toString().padStart(3, "0");
+        counter.value!++;
+        let r: any = counter.value!;
+        let b = soureh.value!.arabic_text.length;
+        if (r <= b) {
+          r = r.toString().padStart(3, "0");
+          audioSrc.value = `http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/${z}${r}.mp3`;
+          nextTick(() => {
+            audioElement1.value!.play();
+          });
+        }
+      } else {
+        let z = id.toString().padStart(3, "0");
+        counter.value!++;
+        let r: any = counter.value!;
+        let b = soureh.value!.arabic_text.length;
+        if (r < b) {
+          r = r.toString().padStart(3, "0");
+          audioSrc.value = `http://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/${z}${r}.mp3`;
+          nextTick(() => {
+            audioElement1.value!.play();
+          });
+        }
+      }
+    }
     const store = useStore();
-
     const showJson = localStorage.getItem("faValue") || "ansarian";
     const faValueShow = ref(JSON.parse(showJson));
-
+    let soureh: any = ref(null);
+    onMounted(() => {
+      for (let i = 0; i < 114; i++) {
+        if (store.all_quran[i].id == props.id) {
+          soureh.value = store.all_quran[i];
+          console.log(soureh.value);
+        }
+      }
+    });
     return {
+      play,
+      audioSrc,
       faValueShow,
       store,
-      callaudio,
+      callAudio,
       audioElement1,
-      itemRefs,
-      buttonhref,
-      pRefs,
-      pAr,
-      mohsen,
+      error,
+      callAudioEnded,
+      soureh,
     };
-  },
-  data() {
-    return {
-      soureh: null as any,
-    };
-  },
-  mounted() {
-    fetch("http://localhost:3000/all_quran/" + this.id)
-      .then((res) => res.json())
-      .then((data) => (this.soureh = data))
-      .catch((err) => console.log(err.message));
   },
 });
 </script>

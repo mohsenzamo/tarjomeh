@@ -4,33 +4,55 @@
       <a class="closebtn" @click="closeNav">&times;</a>
       <div class="overlay-content">
         <form class="setting-box">
-          <div class="dark-toggle">
-            <input type="checkbox" id="toggle" v-model="darkValue" />
-            <label for="toggle"></label>
-            ansarian<input
-              type="radio"
-              name="fa"
-              id="ansarian"
-              value="ansarian"
-              v-model="faValue"
-            />
-            makarem<input
-              type="radio"
-              name="fa"
-              id="makarem"
-              value="makarem"
-              v-model="faValue"
-            />
-            maleki<input
-              type="radio"
-              name="fa"
-              id="maleki"
-              value="maleki"
-              v-model="faValue"
-            />
+          <div class="toggle-box">
+            <div class="dark-box">
+              <label class="dark-label" v-if="darkValue == false" for="toggle"
+                >حالت روز:</label
+              >
+              <label class="dark-label" v-if="darkValue == true" for="toggle"
+                >حالت شب:</label
+              >
+              <input type="checkbox" id="toggle" v-model="darkValue" />
+              <label class="dark-checkbox" for="toggle"></label>
+            </div>
+            <div class="fa-box">
+              <label class="fa-label">ترجمه:</label>
+              <span class="fa-sapn">
+                <input
+                  type="radio"
+                  id="ansarian"
+                  name="fa"
+                  value="ansarian"
+                  v-model="faValue"
+                />
+                <label for="ansarian">انصاریان</label>
+                <div class="check"></div>
+              </span>
+              <span class="fa-sapn">
+                <input
+                  type="radio"
+                  id="makarem"
+                  name="fa"
+                  value="makarem"
+                  v-model="faValue"
+                />
+                <label for="makarem">مکارم</label>
+                <div class="check"></div>
+              </span>
+              <span class="fa-sapn">
+                <input
+                  type="radio"
+                  id="maleki"
+                  name="fa"
+                  value="maleki"
+                  v-model="faValue"
+                />
+                <label for="maleki">مالکی</label>
+                <div class="check"></div>
+              </span>
+            </div>
           </div>
         </form>
-        <span class="fa">fa:{{ faValue }}</span>
       </div>
     </div>
     <div class="setting-icon">
@@ -133,7 +155,6 @@ export default defineComponent({
       localStorage.setItem("faValue", JSON.stringify(faValue.value));
       store.fa = faValue.value;
     });
-
     let overlayValue = ref("translateX(-100%)");
     function openNav() {
       overlayValue.value = "translateX(0%)";

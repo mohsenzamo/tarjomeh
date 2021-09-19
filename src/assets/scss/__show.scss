@@ -8,19 +8,73 @@ $size: 68px;
     justify-items: center;
     .mohsen1Box {
         text-align: center;
-        .mohsen1 {
-            &:nth-child(1) {
-                width: fill-available;
-                border: none;
+        height: 100vh;
+        overflow-y: scroll;
+        .circle {
+            stroke: #f8aa28;
+            stroke-dasharray: 650;
+            stroke-dashoffset: 650;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.3;
+        }
+
+        .playBut {
+            /*  border: 1px solid red;*/
+            display: inline-block;
+            transition: all 0.5s ease;
+
+            .triangle {
+                transition: all 0.7s ease-in-out;
+                stroke-dasharray: 240;
+                stroke-dashoffset: 480;
+                stroke: #000;
+                transform: translateY(0);
             }
-            a{
+
+            &:hover {
+                .triangle {
+                    stroke-dashoffset: 0;
+                    opacity: 1;
+                    stroke: #f8aa28;
+                    animation: nudge 0.7s ease-in-out;
+
+                    @keyframes nudge {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        30% {
+                            transform: translateX(-5px);
+                        }
+                        50% {
+                            transform: translateX(5px);
+                        }
+                        70% {
+                            transform: translateX(-2px);
+                        }
+                        100% {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+
+                .circle {
+                    stroke-dashoffset: 0;
+                    opacity: 1;
+                }
+            }
+        }
+
+        button {
+            border-radius: 100%;
+            height: 40px;
+        }
+        .mohsen1 {
+            a {
                 background-color: red;
             }
             font-family: IRANSans;
             font-size: 20px;
-            direction: rtl;
-            width: fit-content;
-            display: inline-grid;
+
             border: 1px solid black;
             &:nth-last-child(1) {
                 margin-bottom: 100px;
@@ -29,12 +83,65 @@ $size: 68px;
                 margin-left: 15px;
                 margin-right: 15px;
                 color: orange;
-                
             }
         }
     }
     .mohsen2Box {
         text-align: center;
+        .circle {
+            stroke: #f8aa28;
+            stroke-dasharray: 650;
+            stroke-dashoffset: 650;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.3;
+        }
+
+        .playBut {
+            /*  border: 1px solid red;*/
+            display: inline-block;
+            transition: all 0.5s ease;
+
+            .triangle {
+                transition: all 0.7s ease-in-out;
+                stroke-dasharray: 240;
+                stroke-dashoffset: 480;
+                stroke: #000;
+                transform: translateY(0);
+            }
+
+            &:hover {
+                .triangle {
+                    stroke-dashoffset: 0;
+                    opacity: 1;
+                    stroke: #f8aa28;
+                    animation: nudge 0.7s ease-in-out;
+
+                    @keyframes nudge {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        30% {
+                            transform: translateX(-5px);
+                        }
+                        50% {
+                            transform: translateX(5px);
+                        }
+                        70% {
+                            transform: translateX(-2px);
+                        }
+                        100% {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+
+                .circle {
+                    stroke-dashoffset: 0;
+                    opacity: 1;
+                }
+            }
+        }
+
         .mohsen2 {
             font-size: 20px;
             direction: rtl;
@@ -47,6 +154,27 @@ $size: 68px;
             .mohsenfarsi {
                 margin-left: 15px;
                 margin-right: 15px;
+            }
+        }
+    }
+    .audio-box {
+        border: 2px solid olive;
+        margin-bottom: 100px;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        justify-items: center;
+        audio {
+            source {
+                &:-webkit-media-controls-panel,
+                &:-webkit-media-controls-play-button {
+                    -moz-border-radius: 7px 7px 7px 7px !important;
+                    -webkit-border-radius: 7px 7px 7px 7px;
+                    border-radius: 7px 7px 7px 7px;
+
+                    background-color: orange;
+                }
             }
         }
     }

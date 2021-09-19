@@ -23,7 +23,7 @@
             }
             .closebtn {
                 position: absolute;
-                top: 20px;
+                top: -25px;
                 right: 45px;
                 font-size: 60px;
                 color: #fff;
@@ -31,63 +31,149 @@
             }
             .overlay-content {
                 position: relative;
-                top: 25%;
+                top: 10%;
                 width: 100%;
                 text-align: center;
                 margin-top: 30px;
+                height: 80%;
                 .setting-box {
-                    border: 5px solid #fff;
-                    .dark-toggle {
+                    height: 100%;
+                    .toggle-box {
                         position: absolute;
                         top: 0;
                         left: 0;
                         right: 0;
                         bottom: 0;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        label {
-                            position: relative;
-                            display: block;
-                            width: 180px;
-                            height: 100px;
-                            border-radius: 100px;
-                            background-color: #000839;
-                            overflow: hidden;
-                            cursor: pointer;
-                            &:before,
-                            &:after {
+                        display: block;
+                        .dark-box {
+                            display: grid;
+                            grid-template-columns: 2fr 7fr;
+                            font-family: neirizi;
+                            color: #fff;
+                            align-items: center;
+                            padding-right: 100px;
+                            .dark-label {
+                                font-size: 40px;
+                            }
+                            .dark-checkbox {
+                                justify-self: center;
+                                position: relative;
                                 display: block;
-                                position: absolute;
-                                content: "";
-                                width: 72px;
-                                height: 72px;
-                                border-radius: 50%;
-                                top: 14px;
-                                left: 14px;
-                                transition: 0.5s ease;
-                            }
-                            &:before {
-                                background-color: #ffa41b;
-                            }
-
-                            &:after {
+                                width: 180px;
+                                height: 100px;
+                                border-radius: 100px;
                                 background-color: #000839;
-                                left: -58px;
-                                transform: scale(0.00001);
-                            }
-                        }
-
-                        input[type="checkbox"] {
-                            display: none;
-                            &:checked + label {
+                                overflow: hidden;
+                                cursor: pointer;
+                                &:before,
+                                &:after {
+                                    display: block;
+                                    position: absolute;
+                                    content: "";
+                                    width: 72px;
+                                    height: 72px;
+                                    border-radius: 50%;
+                                    top: 14px;
+                                    left: 14px;
+                                    transition: 0.5s ease;
+                                }
                                 &:before {
-                                    background-color: #fff;
-                                    transform: translateX(80px);
+                                    background-color: #ffa41b;
                                 }
 
                                 &:after {
-                                    transform: translateX(120px) scale(1);
+                                    background-color: #000839;
+                                    left: -58px;
+                                    transform: scale(0.00001);
+                                }
+                            }
+
+                            input[type="checkbox"] {
+                                display: none;
+                                &:checked + label {
+                                    &:before {
+                                        background-color: #fff;
+                                        transform: translateX(80px);
+                                    }
+
+                                    &:after {
+                                        transform: translateX(120px) scale(1);
+                                    }
+                                }
+                            }
+                        }
+                        .fa-box {
+                            display: grid;
+                            grid-template-columns: 2fr repeat(3, 1fr);
+                            font-family: neirizi;
+                            color: #fff;
+                            align-items: center;
+
+                            .fa-label {
+                                font-size: 40px;
+                            }
+                            .fa-sapn {
+                                display: flex;
+                                align-items: center;
+                                input[type="radio"] {
+                                    position: absolute;
+                                    visibility: hidden;
+                                }
+                                input[type=radio]:checked ~ {
+                                    .check {
+                                    border: 5px solid #0DFF92;
+                                    &:before{
+                                        background: #0DFF92;
+                                    }
+                                    
+                                  }
+                                  label{
+                                    color: #0DFF92;
+                                }
+                                }
+                                  
+                                label {
+                                    display: block;
+                                    position: relative;
+                                    font-weight: 300;
+                                    font-size: 1.35em;
+                                    padding: 25px 25px 25px 80px;
+                                    margin: 10px auto;
+                                    height: 30px;
+                                    cursor: pointer;
+                                    transition: all 0.25s linear;
+                                }
+                                .check {
+                                    display: block;
+                                    position: absolute;
+                                    border: 5px solid #fff;
+                                    border-radius: 100%;
+                                    height: 25px;
+                                    width: 25px;
+                                    z-index: 5;
+                                    transition: border 0.25s linear;
+                                    transition: border 0.25s linear;
+                                    &:before {
+                                        display: block;
+                                        position: absolute;
+                                        content: "";
+                                        border-radius: 100%;
+                                        height: 15px;
+                                        width: 15px;
+                                        top: 5px;
+                                        left: 5px;
+                                        margin: auto;
+                                        transition: background 0.25s linear;
+                                        -webkit-transition: background 0.25s linear;
+                                    }
+                                }
+                                &:hover {
+                                    label {
+                                        color: #ccc;
+                                    }
+                                    .check {
+                                        border: 5px solid #ccc;
+                                    }
                                 }
                             }
                         }
@@ -96,11 +182,12 @@
             }
         }
         .setting-icon {
+            will-change: transform;
             z-index: 1;
-            position: absolute;
+            position: fixed;
             top: 100px;
-            left: 0;
-            width: 40px;
+            left: -40px;
+            width: 80px;
             height: 40px;
             text-align: center;
             line-height: 40px;
@@ -108,6 +195,8 @@
             transition: all 0.5s;
             .setting-icon-arrow {
                 display: block;
+                position: absolute;
+                right: 10px;
                 transform: rotate(90deg);
             }
             .setting-icon-text {
@@ -117,7 +206,7 @@
                 font-family: Vazir-Light-WOL;
             }
             &:hover {
-                width: 80px;
+                left:0px;
                 .setting-icon-arrow {
                     display: none;
                 }

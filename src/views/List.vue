@@ -6,7 +6,7 @@
           <th>شماره</th>
           <th>اسم عربی</th>
           <th>اسم فارسی</th>
-          <th>مکیه یا مدینه</th> 
+          <th>مکیه یا مدینه</th>
           <th>آیات</th>
           <th>جزء</th>
         </tr>
@@ -22,7 +22,7 @@
           <td>{{ item.pa_name }}</td>
           <td v-if="item.mkORmd">مکیه</td>
           <td v-else>مدینه</td>
-          <td>{{ item.ayats }}</td>
+          <td>{{ item.arabic_text.length }}</td>
           <td>{{ item.part }}</td>
         </tr>
       </tbody>
@@ -34,29 +34,25 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useStore } from "../store/index";
+import { useRouter } from 'vue-router';
 export default defineComponent({
   name: "List",
   components: {},
-  data() {
-    return {
-      input_x: 0,
-      input_value: "",
-      quran_name: [] as any,
-    };
-  },
-  methods: {
-    showLink(soureh_id: number, soureh_name: string) {
-      this.$router.push({
+  setup() {
+    const router = useRouter()
+    const store = useStore();
+    const quran_name = store.all_quran;
+    function showLink(soureh_id: number, soureh_name: string) {
+      router.push({
         name: "Show",
         params: { id: soureh_id, name: soureh_name },
       });
-    },
-  },
-  mounted() {
-    fetch("http://localhost:3000/quran_name")
-      .then((res) => res.json())
-      .then((data) => (this.quran_name = data))
-      .catch((err) => console.log(err.message));
+    }
+    return {
+      quran_name,
+      showLink,
+    };
   },
 });
 </script>
