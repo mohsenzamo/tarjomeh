@@ -73,13 +73,13 @@
           <span>(({{ index + 1 }}))</span>
         </p>
         <p class="soureh-box-fa">
-          <span v-if="store.fa == 'ansarian'" style="color: green">{{
+          <span v-if="store.fa == 'ansarian'">{{
             soureh.fa_ansarian_text[index]
           }}</span>
-          <span v-if="store.fa == 'makarem'" style="color: blue">{{
+          <span v-if="store.fa == 'makarem'">{{
             soureh.fa_makarem_text[index]
           }}</span>
-          <span v-if="store.fa == 'maleki'" style="color: red">{{
+          <span v-if="store.fa == 'maleki'">{{
             soureh.fa_maleki_text[index]
           }}</span>
           <span>(({{ index + 1 }}))</span>
@@ -125,6 +125,9 @@
               />
             </svg>
           </a>
+          <div class="demo" @click="share(soureh.ar_name, index, item)">
+            <div class="demo__open-btn">&#9993;</div>
+          </div>
         </div>
       </div>
     </div>
@@ -167,10 +170,6 @@
           />
         </div>
       </div>
-      <img
-        src="https://i.picsum.photos/id/15/200/300.jpg?hmac=lozQletmrLG9PGBV1hTM1PnmvHxKEU0lAZWu8F2oL30"
-        alt=""
-      />
     </div>
   </div>
   <div v-else class="loader-div">
@@ -277,9 +276,9 @@ export default defineComponent({
     function seekUpdate() {
       seekValue.value = audioElement1.value!.currentTime;
     }
-    let qaValue:any=ref()
+    let qaValue: any = ref();
     function callAudio(id: number, aye: number) {
-       qaValue.value = store.qa
+      qaValue.value = store.qa;
       if (id == 1 || id == 9) {
         aye++;
       }
@@ -293,7 +292,7 @@ export default defineComponent({
       counter.value = aye;
     }
     function callAudioEnded(id: number) {
-      qaValue.value = store.qa
+      qaValue.value = store.qa;
       if (id == 1) {
         let z = id.toString().padStart(3, "0");
         counter.value!++;
@@ -322,10 +321,59 @@ export default defineComponent({
       }
     }
 
-    
+    type mohsen = {
+      id: number;
+      ar_name: string;
+      pa_name: string;
+      part: number[];
+      arabic_text: string[];
+      fa_ansarian_text: string[];
+      fa_makarem_text: string[];
+      fa_maleki_text: string[];
+      mkORmd: boolean;
+    };
     const showJson = localStorage.getItem("faValue") || "ansarian";
     const faValueShow = ref(JSON.parse(showJson));
-    let soureh: any = ref(null);
+    let soureh = ref<mohsen>({
+      id: 1,
+      ar_name: "الحمد",
+      pa_name: "ستایش",
+      part: [1],
+      mkORmd: true,
+      arabic_text: [
+        "بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ",
+        "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+        "الرَّحْمَـٰنِ الرَّحِيمِ",
+        "مَالِكِ يَوْمِ الدِّينِ",
+        "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+        "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+      ],
+      fa_ansarian_text: [
+        "همه ستایش ها، ویژه خدا، مالک و مربّی جهانیان است.",
+        "رحمتش بی اندازه و مهربانی اش همیشگی است.",
+        "مالک و فرمانروای روز پاداش و کیفر است.",
+        "[پروردگارا!] تنها تو را می پرستیم وتنها از تو کمک می خواهیم.",
+        "ما را به راهِ راست راهنمایی کن.",
+        "راه کسانی [چون پیامبران، صدّیقان، شهیدان و صالحان که به خاطر لیاقتشان] به آنان نعمتِ [ایمان، عمل شایسته و اخلاق حسنه] عطا کردی، هم آنان که نه مورد خشم تواند و نه گمراه اند.",
+      ],
+      fa_makarem_text: [
+        "ستایش مخصوص خداوندی است که پروردگار جهانیان است.",
+        "(خداوندی که) بخشنده و بخشایشگر است (و رحمت عام و خاصش همگان را فرا گرفته).",
+        "(خداوندی که) مالک روز جزاست.",
+        "(پروردگارا!) تنها تو را می‌پرستیم؛ و تنها از تو یاری می‌جوییم.",
+        "ما را به راه راست هدایت کن...",
+        "راه کسانی که آنان را مشمول نعمت خود ساختی؛ نه کسانی که بر آنان غضب کرده‌ای؛ و نه گمراهان.",
+      ],
+      fa_maleki_text: [
+        "خدا را سپاس که صاحب‌اختیار جهانیان است",
+        "بزرگوارِ مهربان است",
+        "صاحب روز جزاست",
+        "فقط تو را بندگی می‌کنیم و در این راه فقط از تو کمک می‌خواهیم",
+        "ما را به راه درست زندگی ببر:",
+        "راه کسانی که به آنان نعمت ویژه ای داده ای.<br>همانانی که نه گرفتار خشم تو شده‌اند و نه راه را گم کرده‌اند.",
+      ],
+    });
     onMounted(() => {
       for (let i = 0; i < 114; i++) {
         if (store.all_quran[i].id == props.id) {

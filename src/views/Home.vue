@@ -86,7 +86,6 @@ export default defineComponent({
         name: "Show",
         params: {
           id: id,
-          name: ar_name,
         },
       });
     }

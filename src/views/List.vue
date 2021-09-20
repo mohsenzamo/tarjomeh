@@ -46,7 +46,7 @@ export default defineComponent({
     function showLink(soureh_id: number, soureh_name: string) {
       router.push({
         name: "Show",
-        params: { id: soureh_id, name: soureh_name },
+        params: { id: soureh_id},
       });
     }
     return {
