@@ -45,6 +45,12 @@
                         right: 0;
                         bottom: 0;
                         display: block;
+                        @include breakPointX(420px) {
+                            right: -50px;
+                        }
+                        @include breakPointX(360px) {
+                            right: -70px;
+                        }
                         .dark-box {
                             display: grid;
                             grid-template-columns: 2fr 7fr;
@@ -54,6 +60,10 @@
                             padding-right: 100px;
                             .dark-label {
                                 font-size: 40px;
+                                @include breakPointX(800px) {
+                                    font-size: 30px;
+                                    background-color: red;
+                                }
                             }
                             .dark-checkbox {
                                 justify-self: center;
@@ -65,6 +75,10 @@
                                 background-color: #000839;
                                 overflow: hidden;
                                 cursor: pointer;
+                                @include breakPointX(768px) {
+                                    width: 150px;
+                                    height: 70px;
+                                }
                                 &:before,
                                 &:after {
                                     display: block;
@@ -76,6 +90,11 @@
                                     top: 14px;
                                     left: 14px;
                                     transition: 0.5s ease;
+                                    @include breakPointX(768px) {
+                                        width: 50px;
+                                        height: 50px;
+                                        top: 10px;
+                                    }
                                 }
                                 &:before {
                                     background-color: #ffa41b;
@@ -85,6 +104,9 @@
                                     background-color: #000839;
                                     left: -58px;
                                     transform: scale(0.00001);
+                                    @include breakPointX(768px) {
+                                        left: -48px;
+                                    }
                                 }
                             }
 
@@ -108,9 +130,37 @@
                             font-family: neirizi;
                             color: #fff;
                             align-items: center;
-
+                            @include breakPointX(1024px) {
+                                grid-template-columns: 2fr repeat(3, 2fr);
+                            }
+                            @include breakPointX(615px) {
+                                grid-template-columns: 2fr 2fr;
+                                justify-items: end;
+                            }
                             .fa-label {
                                 font-size: 40px;
+                                @include breakPointX(768px) {
+                                    font-size: 30px;
+                                }
+                            }
+                            .select{
+                                display: none;
+                                @include breakPointX(615px) {
+                                    display: block;
+                                    transform: translate(-50%, -20%);
+                                }
+                                select {
+                                    background-color: #0563af;
+                                    color: white;
+                                    padding: 12px;
+                                    width: 250px;
+                                    border: none;
+                                    font-size: 20px;
+                                    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+                                    -webkit-appearance: button;
+                                    appearance: button;
+                                    outline: none;
+                                  }
                             }
                             .fa-sapn {
                                 display: flex;
@@ -119,19 +169,18 @@
                                     position: absolute;
                                     visibility: hidden;
                                 }
-                                input[type=radio]:checked ~ {
+                                input[type="radio"]:checked ~ {
                                     .check {
-                                    border: 5px solid #0DFF92;
-                                    &:before{
-                                        background: #0DFF92;
+                                        border: 5px solid #0dff92;
+                                        &:before {
+                                            background: #0dff92;
+                                        }
                                     }
-                                    
-                                  }
-                                  label{
-                                    color: #0DFF92;
+                                    label {
+                                        color: #0dff92;
+                                    }
                                 }
-                                }
-                                  
+
                                 label {
                                     display: block;
                                     position: relative;
@@ -142,6 +191,12 @@
                                     height: 30px;
                                     cursor: pointer;
                                     transition: all 0.25s linear;
+                                    @include breakPointX(768px) {
+                                        font-size: 1.05em;
+                                    }
+                                    @include breakPointX(615px) {
+                                        display: none;
+                                    }
                                 }
                                 .check {
                                     display: block;
@@ -153,6 +208,13 @@
                                     z-index: 5;
                                     transition: border 0.25s linear;
                                     transition: border 0.25s linear;
+                                    @include breakPointX(768px) {
+                                        height: 17px;
+                                        width: 17px;
+                                    }
+                                    @include breakPointX(615px) {
+                                        display: none;
+                                    }
                                     &:before {
                                         display: block;
                                         position: absolute;
@@ -165,6 +227,12 @@
                                         margin: auto;
                                         transition: background 0.25s linear;
                                         -webkit-transition: background 0.25s linear;
+                                        @include breakPointX(768px) {
+                                            height: 12px;
+                                            width: 12px;
+                                            top:2.4px;
+                                            left:2.4px;
+                                        }
                                     }
                                 }
                                 &:hover {
@@ -206,7 +274,7 @@
                 font-family: Vazir-Light-WOL;
             }
             &:hover {
-                left:0px;
+                left: 0px;
                 .setting-icon-arrow {
                     display: none;
                 }

@@ -50,6 +50,56 @@
                 <label for="maleki">مالکی</label>
                 <div class="check"></div>
               </span>
+              <span class="select">
+                <select v-model="faValue">
+                  <option value="ansarian">انصاریان</option>
+                  <option value="makarem">مکارم</option>
+                  <option value="maleki">مالکی</option>
+                </select>
+              </span>
+            </div>
+            <div class="fa-box">
+              <label class="fa-label">قاری:</label>
+              <span class="fa-sapn">
+                <input
+                  type="radio"
+                  id="AbdulBasit"
+                  name="qa"
+                  value="Abdul_Basit_Murattal_192kbps"
+                  v-model="qaValue"
+                />
+                <label for="AbdulBasit">عبدالباسط</label>
+                <div class="check"></div>
+              </span>
+              <span class="fa-sapn">
+                <input
+                  type="radio"
+                  id="AbdullahBasfar"
+                  name="qa"
+                  value="Abdullah_Basfar_192kbps"
+                  v-model="qaValue"
+                />
+                <label for="AbdullahBasfar">عبدالله بصفر</label>
+                <div class="check"></div>
+              </span>
+              <span class="fa-sapn">
+                <input
+                  type="radio"
+                  id="MuhammadAyyub"
+                  name="qa"
+                  value="Muhammad_Ayyoub_128kbps"
+                  v-model="qaValue"
+                />
+                <label for="MuhammadAyyub">محمد ایوب</label>
+                <div class="check"></div>
+              </span>
+              <span class="select">
+                <select v-model="qaValue">
+                  <option value="Abdul_Basit_Murattal_192kbps">عبدالباسط</option>
+                  <option value="Abdullah_Basfar_192kbps">عبدالله بصفر</option>
+                  <option value="Muhammad_Ayyoub_128kbps">محمد ایوب</option>
+                </select>
+                </span>
             </div>
           </div>
         </form>
@@ -155,6 +205,15 @@ export default defineComponent({
       localStorage.setItem("faValue", JSON.stringify(faValue.value));
       store.fa = faValue.value;
     });
+
+    let qaJson =
+      localStorage.getItem("qaValue") || '"Abdul_Basit_Murattal_192kbps"';
+    let qaValue = ref(JSON.parse(qaJson));
+    watchEffect(() => {
+      localStorage.setItem("qaValue", JSON.stringify(qaValue.value));
+      store.qa = qaValue.value;
+    });
+
     let overlayValue = ref("translateX(-100%)");
     function openNav() {
       overlayValue.value = "translateX(0%)";
@@ -166,6 +225,7 @@ export default defineComponent({
       darkValue,
       gradientElement,
       faValue,
+      qaValue,
       openNav,
       closeNav,
       overlayValue,

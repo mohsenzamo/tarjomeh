@@ -3,160 +3,136 @@ $base: #263238;
 $lite: #fff;
 $brand: #ff3d00;
 $size: 68px;
-.soureh-box {
+.show-box {
     display: grid;
     justify-items: center;
-    .mohsen1Box {
+    .soureh-Box {
+        width: 80%;
         text-align: center;
         height: 100vh;
         overflow-y: scroll;
-        .circle {
-            stroke: #f8aa28;
-            stroke-dasharray: 650;
-            stroke-dashoffset: 650;
-            transition: all 0.5s ease-in-out;
-            opacity: 0.3;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(5px);
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
         }
-
-        .playBut {
-            /*  border: 1px solid red;*/
-            display: inline-block;
-            transition: all 0.5s ease;
-
-            .triangle {
-                transition: all 0.7s ease-in-out;
-                stroke-dasharray: 240;
-                stroke-dashoffset: 480;
-                stroke: #000;
-                transform: translateY(0);
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #0022ffad;
+        }
+        .soureh-box-au {
+            border-bottom: 2px dashed thin black;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+            .circle {
+                stroke: orangered;
+                stroke-dasharray: 650;
+                stroke-dashoffset: 650;
+                transition: all 0.5s ease-in-out;
+                opacity: 0.3;
             }
 
-            &:hover {
-                .triangle {
-                    stroke-dashoffset: 0;
-                    opacity: 1;
-                    stroke: #f8aa28;
-                    animation: nudge 0.7s ease-in-out;
+            .playBut {
+                /*  border: 1px solid red;*/
+                display: inline-block;
+                transition: all 0.5s ease;
 
-                    @keyframes nudge {
-                        0% {
-                            transform: translateX(0);
-                        }
-                        30% {
-                            transform: translateX(-5px);
-                        }
-                        50% {
-                            transform: translateX(5px);
-                        }
-                        70% {
-                            transform: translateX(-2px);
-                        }
-                        100% {
-                            transform: translateX(0);
+                .triangle {
+                    transition: all 0.7s ease-in-out;
+                    stroke-dasharray: 240;
+                    stroke-dashoffset: 480;
+                    stroke: #000;
+                    transform: translateY(0);
+                }
+
+                &:hover {
+                    .triangle {
+                        stroke-dashoffset: 0;
+                        opacity: 1;
+                        stroke: orangered;
+                        animation: nudge 0.7s ease-in-out;
+
+                        @keyframes nudge {
+                            0% {
+                                transform: translateX(0);
+                            }
+                            30% {
+                                transform: translateX(-5px);
+                            }
+                            50% {
+                                transform: translateX(5px);
+                            }
+                            70% {
+                                transform: translateX(-2px);
+                            }
+                            100% {
+                                transform: translateX(0);
+                            }
                         }
                     }
+                    .circle {
+                        stroke-dashoffset: 0;
+                        opacity: 1;
+                    }
                 }
+            }
+            .demo {
+                &__open-btn {
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    font-weight: 700;
+                    font-size: 30px;
+                    background: transparent;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    &:hover {
+                        color: orangered;
+                        box-shadow: 0 0 15px #000;
+                    }
+                }
+            }
 
-                .circle {
-                    stroke-dashoffset: 0;
-                    opacity: 1;
+            .about-me {
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+                font-size: 16px;
+                color: white;
+                font-family: Roboto, Arial, sans-serif;
+
+                a {
+                    color: white;
+
+                    &:hover {
+                        color: lighten(blue, 20%);
+                    }
                 }
             }
         }
-
-        button {
-            border-radius: 100%;
-            height: 40px;
-        }
-        .mohsen1 {
-            a {
-                background-color: red;
-            }
+        .soureh-box-ar {
             font-family: IRANSans;
             font-size: 20px;
+        }
 
-            border: 1px solid black;
-            &:nth-last-child(1) {
-                margin-bottom: 100px;
-            }
-            .mohsenfarsi {
-                margin-left: 15px;
-                margin-right: 15px;
-                color: orange;
-            }
+        .soureh-box-fa {
+            margin-left: 15px;
+            margin-right: 15px;
+            font-weight: 700;
+            color: #000d64;
+            font-family: IRANSans;
         }
     }
-    .mohsen2Box {
-        text-align: center;
-        .circle {
-            stroke: #f8aa28;
-            stroke-dasharray: 650;
-            stroke-dashoffset: 650;
-            transition: all 0.5s ease-in-out;
-            opacity: 0.3;
-        }
 
-        .playBut {
-            /*  border: 1px solid red;*/
-            display: inline-block;
-            transition: all 0.5s ease;
-
-            .triangle {
-                transition: all 0.7s ease-in-out;
-                stroke-dasharray: 240;
-                stroke-dashoffset: 480;
-                stroke: #000;
-                transform: translateY(0);
-            }
-
-            &:hover {
-                .triangle {
-                    stroke-dashoffset: 0;
-                    opacity: 1;
-                    stroke: #f8aa28;
-                    animation: nudge 0.7s ease-in-out;
-
-                    @keyframes nudge {
-                        0% {
-                            transform: translateX(0);
-                        }
-                        30% {
-                            transform: translateX(-5px);
-                        }
-                        50% {
-                            transform: translateX(5px);
-                        }
-                        70% {
-                            transform: translateX(-2px);
-                        }
-                        100% {
-                            transform: translateX(0);
-                        }
-                    }
-                }
-
-                .circle {
-                    stroke-dashoffset: 0;
-                    opacity: 1;
-                }
-            }
-        }
-
-        .mohsen2 {
-            font-size: 20px;
-            direction: rtl;
-            border: 1px solid black;
-            width: fit-content;
-            display: inline-grid;
-            &:nth-last-child(1) {
-                margin-bottom: 100px;
-            }
-            .mohsenfarsi {
-                margin-left: 15px;
-                margin-right: 15px;
-            }
-        }
-    }
     .audio-box {
         border: 2px solid olive;
         margin-bottom: 100px;
@@ -165,72 +141,96 @@ $size: 68px;
         grid-template-columns: 2fr 1fr;
         align-items: center;
         justify-items: center;
-        audio {
-            source {
-                &:-webkit-media-controls-panel,
-                &:-webkit-media-controls-play-button {
-                    -moz-border-radius: 7px 7px 7px 7px !important;
-                    -webkit-border-radius: 7px 7px 7px 7px;
-                    border-radius: 7px 7px 7px 7px;
-
-                    background-color: orange;
+        .audio-box-audio {
+            border: 1px solid black;
+            display: block;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            button {
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                font-size: 25px;
+                border: none;
+                background-color: transparent;
+            }
+            input {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                width: 10rem;
+                height: 0.25rem;
+                outline: none;
+                border-radius: 0.25rem;
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    background-color: #f44336;
+                    border: 0.25rem solid #fff;
+                    border-radius: 1rem;
+                    cursor: pointer;
                 }
             }
         }
     }
-}
-.loader-div {
-    display: grid;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    .loader-div-span {
-        width: $size;
-        height: $size;
-        border-radius: 50%;
-        display: inline-block;
-        position: relative;
-        border: 3px solid;
-        border-color: $lite $lite transparent transparent;
-        animation: rotation 1s linear infinite;
-        &:after,
-        &:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            border: 3px solid;
-            border-color: transparent transparent $brand $brand;
-            width: $size - 8px;
-            height: $size - 8px;
+    .loader-div {
+        display: grid;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        .loader-div-span {
+            width: $size;
+            height: $size;
             border-radius: 50%;
-            animation: rotationBack 0.5s linear infinite;
-            transform-origin: center center;
-        }
-        &:before {
-            width: $size - 16px;
-            height: $size - 16px;
+            display: inline-block;
+            position: relative;
+            border: 3px solid;
             border-color: $lite $lite transparent transparent;
-            animation: rotation 1.5s linear infinite;
+            animation: rotation 1s linear infinite;
+            &:after,
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                border: 3px solid;
+                border-color: transparent transparent $brand $brand;
+                width: $size - 8px;
+                height: $size - 8px;
+                border-radius: 50%;
+                animation: rotationBack 0.5s linear infinite;
+                transform-origin: center center;
+            }
+            &:before {
+                width: $size - 16px;
+                height: $size - 16px;
+                border-color: $lite $lite transparent transparent;
+                animation: rotation 1.5s linear infinite;
+            }
         }
     }
-}
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-@keyframes rotationBack {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-360deg);
+    @keyframes rotationBack {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
+        }
     }
 }

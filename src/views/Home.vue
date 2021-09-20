@@ -68,9 +68,10 @@
 
 <script lang="ts">
 import Swal from "sweetalert2";
-import { defineComponent, onMounted, ref, watchEffect } from "vue";
+import { defineComponent, ref, watchEffect } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "../store/index";
+
 
 export default defineComponent({
   name: "Home",
@@ -168,14 +169,14 @@ export default defineComponent({
     let max4PopularityJSON =
       localStorage.getItem("max4Popularity") || stringifymax4Popularity;
     let max4Popularity = ref(JSON.parse(max4PopularityJSON));
-    watchEffect(()=>{
+    watchEffect(() => {
       localStorage.setItem("max1Popularity", JSON.stringify(name.value[113]));
       localStorage.setItem("max2Popularity", JSON.stringify(name.value[112]));
       localStorage.setItem("max3Popularity", JSON.stringify(name.value[111]));
       localStorage.setItem("max4Popularity", JSON.stringify(name.value[110]));
-    })
+    });
     function selectionSort() {
-      let n = 114
+      let n = 114;
       for (let i = 0; i < n; i++) {
         let min = i;
         for (let j = i + 1; j < n; j++) {

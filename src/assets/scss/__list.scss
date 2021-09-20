@@ -22,12 +22,21 @@ $size: 68px;
         color: #fff;
         text-align: center;
         font-size: 20px;
+        @include breakPointX(650px) {
+            font-size: 12px;
+        }
     }
     .box-table-thead {
         th {
             background-color: #55608f;
             font-family: neirizi;
             font-size: 25px;
+            @include breakPointX(650px) {
+                font-size: 17px;
+            }
+            @include breakPointX(650px) {
+                font-size: 15px;
+            }
         }
     }
 
