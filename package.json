@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@soundcut/decode-audio-data-fast": "^2.0.1",
+    "comlink": "^4.3.1",
     "core-js": "^3.8.3",
     "json-server": "^0.16.3",
     "pinia": "^2.0.0-rc.6",
@@ -29,7 +30,8 @@
     "vite": "^2.5.4",
     "vite-plugin-pwa": "^0.11.2",
     "vue-tsc": "^0.2.2",
-    "webpack-env": "^0.8.0"
+    "webpack-env": "^0.8.0",
+    "worker-loader": "^3.0.8"
   },
   "description": "This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
   "main": "postcss.config.js",

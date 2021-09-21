@@ -62,7 +62,6 @@
                                 font-size: 40px;
                                 @include breakPointX(800px) {
                                     font-size: 30px;
-                                    background-color: red;
                                 }
                             }
                             .dark-checkbox {
@@ -285,15 +284,18 @@
         }
         #nav {
             position: fixed;
-            left: 48%;
+            left: 45%;
             @include breakPointX(1440px) {
                 bottom: 2%;
             }
             @include breakPointX(1300px) {
                 bottom: 4%;
             }
-            @include breakPointX(580px) {
-                left: 45%;
+            @include breakPointX(768px) {
+                left: 40%;
+            }
+            @include breakPointX(375px) {
+                left: 35%
             }
             a {
                 display: block;

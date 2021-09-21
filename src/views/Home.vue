@@ -72,7 +72,6 @@ import { defineComponent, ref, watchEffect } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "../store/index";
 
-
 export default defineComponent({
   name: "Home",
   setup() {
@@ -190,6 +189,7 @@ export default defineComponent({
         }
       }
     }
+
     selectionSort();
     return {
       selectionSort,

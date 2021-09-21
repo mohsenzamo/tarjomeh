@@ -202,6 +202,9 @@
         width: 270px;
         height: 50px;
         border-width: 5px;
+        &:nth-last-child(1){
+          margin-bottom: 80px;
+        }
       }
       @include breakPointY(570px) {
         height: 60px;
