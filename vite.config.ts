@@ -5,7 +5,12 @@ import { VitePWA } from 'vite-plugin-pwa'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), VitePWA({
-    strategies: 'generateSW',
+    strategies: 'injectManifest',
+    filename: 'workbox.ts',
+    srcDir: 'src',
+    includeAssets: [
+      '**/*.js',
+    ],
     manifest: {
       "background_color": "#00cc66",
       "description": "ترجمه قرآن کریم",
@@ -16,12 +21,12 @@ export default defineConfig({
       "theme_color": "#ffcc00",
       "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/favicon/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/favicon/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

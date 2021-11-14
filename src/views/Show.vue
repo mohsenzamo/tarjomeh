@@ -59,7 +59,11 @@
               />
             </svg>
           </a>
-          <div class="demo" @click="share(soureh.ar_name, index, item)">
+          <div
+            v-if="shareShow"
+            class="demo"
+            @click="share(soureh.ar_name, index, item)"
+          >
             <div class="demo__open-btn">&#9993;</div>
           </div>
         </div>
@@ -125,7 +129,11 @@
               />
             </svg>
           </a>
-          <div class="demo" @click="share(soureh.ar_name, index, item)">
+          <div
+            v-if="shareShow"
+            class="demo"
+            @click="share(soureh.ar_name, index, item)"
+          >
             <div class="demo__open-btn">&#9993;</div>
           </div>
         </div>
@@ -184,8 +192,14 @@ import Swal from "sweetalert2";
 export default defineComponent({
   name: "Show",
   props: ["id"],
-  components: {},
   setup(props) {
+    let shareShow = ref<boolean>(false);
+    function shareTest() {
+      if ('share' in navigator) {
+        shareShow.value = true;
+      }
+    }
+    shareTest();
     function share(name: string, id: number, ar_text: string) {
       if (navigator.share) {
         let url = window.location.pathname;
@@ -197,13 +211,7 @@ export default defineComponent({
           })
           .catch(console.error);
       } else {
-        Swal.fire({
-          icon: "warning",
-          title: "خطا!",
-          text: "دستگاه شما از اشتراک پشتیبانی نمی کند.",
-          showCloseButton: true,
-          showConfirmButton: false,
-        });
+        
       }
     }
     function error() {
@@ -382,6 +390,7 @@ export default defineComponent({
       }
     });
     return {
+      shareShow,
       share,
       setmaxSeek,
       maxSeek,
